@@ -1,0 +1,29 @@
+#root {
+    margin: 0;
+    width: 100%;
+
+    --green-color: rgb(99, 212, 99);
+}
+
+.container {
+    margin: 0 auto;
+    margin-top: 24px;
+    width: 41rem;
+    height: 21rem;
+    background-color: inherit;
+    display: flex;
+}
+
+html[data-theme="dark"] {
+    --fon-color: black;
+    --text-color: white;
+    background-color: black;
+    --grey-color: #a19f9f;
+}
+
+html[data-theme="light"] {
+    --fon-color: white;
+    --text-color: black;
+    background-color: white;
+    --grey-color: #ccc;
+}
