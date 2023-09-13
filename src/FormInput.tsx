@@ -58,6 +58,7 @@ export function FormInput() {
     };
     const ageDownHandler = (e: React.SyntheticEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        ageInputRef.current!.style.backgroundColor = "transparent";
         if (age === "" || Number(age) <= 18) {
             setAge("18");
         } else {
@@ -67,6 +68,7 @@ export function FormInput() {
     };
     const ageUpHandler = (e: React.SyntheticEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        ageInputRef.current!.style.backgroundColor = "transparent";
         if (age === "") {
             setAge("18");
         } else {
@@ -81,6 +83,8 @@ export function FormInput() {
         e: React.SyntheticEvent<HTMLButtonElement>
     ) => {
         e.preventDefault();
+        setSubscribe("");
+        console.log('setSubscribe("");');
         setIsVisibleModal(() => !isVisibleModal);
         subscrInputRef.current!.style.backgroundColor = "transparent";
     };
@@ -110,7 +114,7 @@ export function FormInput() {
                     ref={ageInputRef}
                     onChange={inputAgeHandler}
                     className={styles["form-input-with-button"]}
-                    type="text"
+                    type="number"
                     placeholder="Age"
                     value={age}
                 />
@@ -143,7 +147,8 @@ export function FormInput() {
                     className={styles["form-input-with-button"]}
                     type="text"
                     placeholder="Subscribed"
-                    defaultValue={subscribe}
+                    // defaultValue={subscribe}
+                    value={subscribe}
                 />
                 <button
                     onClick={subscrButtonHandler}

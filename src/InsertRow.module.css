@@ -243,3 +243,12 @@ input[type="checkbox"] {
 .modal-text:hover {
     background-color: var(--green-color);
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}

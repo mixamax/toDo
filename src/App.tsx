@@ -22,7 +22,9 @@ function App() {
     const [data, setData] = useState<dataObject[]>([]);
     const [marked, setMarked] = useState("");
     useEffect(() => {
-        const localData: [] = JSON.parse(localStorage.getItem("data") || "");
+        const localData: [] = JSON.parse(
+            localStorage.getItem("data") || "null"
+        );
         if (localData) {
             setData(localData);
         }
