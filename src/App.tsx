@@ -22,15 +22,21 @@ function App() {
     const [data, setData] = useState<dataObject[]>([]);
     const [marked, setMarked] = useState("");
     useEffect(() => {
-        const localData: [] = JSON.parse(localStorage.getItem("data"));
+        const localData: [] = JSON.parse(localStorage.getItem("data") || "");
         if (localData) {
             setData(localData);
         }
     }, []);
 
-    const chooseTodoHandler = (e) => {
-        if (e.target.closest("div[data-todo]")) {
-            setMarked(e.target.closest("div[data-todo]").id);
+    const chooseTodoHandler = (e: React.SyntheticEvent<HTMLDivElement>) => {
+        if ((e.target as HTMLSpanElement).closest("div[data-todo]")) {
+            setMarked(
+                (
+                    (e.target as HTMLSpanElement).closest(
+                        "div[data-todo]"
+                    ) as HTMLSpanElement
+                ).id
+            );
         } else {
             return;
         }
