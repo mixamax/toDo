@@ -20,6 +20,8 @@
     overflow-x: hidden;
     padding: 0.2rem;
     padding-top: 2rem;
+    padding-left: 0.3rem;
+    margin-right: 1rem;
 }
 .list-border {
     position: absolute;
@@ -64,13 +66,13 @@
 }
 
 .item {
-    /* width: 97%; */
+    width: 374px;
     display: flex;
     justify-content: flex-start;
     padding-left: 0.5rem;
     cursor: pointer;
     margin-top: 0.1rem;
-    margin-right: 0.1rem;
+    margin-right: 0.3rem;
 }
 .item-text {
     color: inherit;
